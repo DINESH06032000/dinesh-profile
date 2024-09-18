@@ -30,7 +30,7 @@ export default function Contact() {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8081/cont', formData)
+      .post('https://dinesh-profile.onrender.com', formData)
       .then((response) => {
 
         setMessage('Message send Successfully! ');
