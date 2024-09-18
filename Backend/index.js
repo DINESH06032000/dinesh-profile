@@ -14,8 +14,8 @@ app.use(bodyParser.json()); // For parsing JSON request bodies
 
 // Database connection pool for better performance
 const db = mysql.createPool({
-  // host: process.env.DB_HOST,
-  host: '130.162.54.212', 
+  host: process.env.DB_HOST,
+  // host: '130.162.54.212', 
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DBNAME,
