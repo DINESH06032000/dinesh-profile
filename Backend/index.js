@@ -31,28 +31,27 @@ db.getConnection((err) => {
   console.log('Connected to the MySQL database.');
 });
 
-// Route to handle POST request for /cont
-app.post('/cont', (req, res) => {
-  const { firstName, lastName, email, phone, message } = req.body;
 
-  // Basic validation of request body
-  if (!firstName || !lastName || !email || !phone || !message) {
-    return res.status(400).send('All fields are required.');
-  }
+// app.post('/cont', (req, res) => {
+//   const { firstName, lastName, email, phone, message } = req.body;
 
-  // SQL query to insert data
-  const query = 'INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)';
+
+//   if (!firstName || !lastName || !email || !phone || !message) {
+//     return res.status(400).send('All fields are required.');
+//   }
+
+
+//   const query = 'INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)';
   
-  db.query(query, [firstName, lastName, email, phone, message], (err, result) => {
-    if (err) {
-      console.error('Error inserting data:', err);
-      return res.status(500).send('Error registering user.');
-    }
+//   db.query(query, [firstName, lastName, email, phone, message], (err, result) => {
+//     if (err) {
+//       console.error('Error inserting data:', err);
+//       return res.status(500).send('Error registering user.');
+//     }
 
-    // Send success response
-    res.status(200).send('User registered successfully!');
-  });
-});
+//     res.status(200).send('User registered successfully!');
+//   });
+// });
 
 // Start the server
 const PORT = process.env.PORT || 3000;
