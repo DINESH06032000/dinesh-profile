@@ -1,0 +1,102 @@
+{
+    "work": [
+        {
+            "id": 1,
+            "comname": "i5 technologies pvt ltd",
+            "year": "September 2024 - Present",
+            "role": "Java Full Stack Developer",
+            "location": "Chennai,TN",
+            "des": "As a Java Full Stack Developer, responsible for designing, developing, and maintaining web applications across both front-end and back-end. Skilled in Java, Spring Boot, HTML, CSS, JavaScript, and databases like SQL. Building dynamic user interfaces, implementing RESTful services, and ensuring seamless integration between server and client-side components.",
+            "img": "i5logo.png"
+        },
+        {
+            "id": 2,
+            "comname": "Izeon Innovative pvt ltd",
+            "year": "Jan 2024 - Aug 2024",
+            "role": "Software Developer",
+            "location": "Chennai,TN",
+            "des": "I am an Experienced Software Developer with a strong technical background and exceptional project management skills. Proven ability to effectively manage multiple projects simultaneously, resulting in significant efficiencies for previous employers.",
+            "img": "izeon.png"
+        }
+    ],
+    "internship": [
+        {
+            "id": 1,
+            "comname": "Izeon Innovative pvt ltd",
+            "year": "Sep 2023 - Dec 2023",
+            "role": "Java full stack",
+            "location": "Chennai,TN",
+            "des": "I had the opportunity to immerse myself in Java Full Stack Development, gaining valuable hands-on experience and enhancing my skills in both front-end and back-end technologies.",
+            "img": "izeon.png"
+        },
+        {
+            "id": 2,
+            "comname": "Shiash Info Solution Pvt Ltd",
+            "year": "May 2023 - July 2023",
+            "role": "Data engineer",
+            "location": "Chennai,TN",
+            "des": "Analyzing raw data, Developing and maintaining datasets, Improving data quality and efficiency by using mathematics, Statistics, AI, ML/DL and Computer engineer in a Live Projects.",
+            "img": "shiash.png"
+        }
+    ],
+    "certificate": [
+        {
+            "id": 1,
+            "comname": "Infinity Computer Learning Center",
+            "year": "2019",
+            "role": "Programming in C",
+            "location": "Vellore,TN",
+            "img": "infinity.png"
+        },
+        {
+            "id": 2,
+            "comname": "Online Platform Coursera",
+            "year": "2022",
+            "role": "Web Development",
+            "location": "Online",
+            "img": "google.png"
+        },
+        {
+            "id": 3,
+            "comname": "Online Platform Coursera",
+            "year": "2022",
+            "role": "Google Data Analytics Professional Certificate",
+            "location": "Online",
+            "img": "google.png"
+        },
+        {
+            "id": 4,
+            "comname": "Online Platform Coursera",
+            "year": "2022",
+            "role": "Google UX Design ",
+            "location": "Online",
+            "img": "google.png"
+        }
+    ],
+    "education": [
+        {
+            "id": 1,
+            "comname": "C.Abdul Hakeem College of Engineering and Technology",
+            "year": "2018 - 2022",
+            "role": "Bachalore of Engineering (Computer Science and Engineering)",
+            "location": "Ranipet,TN",
+            "img": "cahcet.png"
+        },
+        {
+            "id": 2,
+            "comname": "Vani Vidhyalaya Matric Higher Secondary School",
+            "year": "2017 -2018",
+            "role": "HSLC (12th) PCMCs",
+            "location": "Vellore,TN",
+            "img": "vani.jpg"
+        },
+        {
+            "id": 3,
+            "comname": "Vani Vidhyalaya Matric Higher Secondary School",
+            "year": "2015 -2016",
+            "role": "SSLC (10th) General",
+            "location": "Vellore,TN",
+            "img": "vani.jpg"
+        }
+    ]
+}

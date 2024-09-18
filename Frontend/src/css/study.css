@@ -1,0 +1,39 @@
+.accordbody{
+    margin-bottom: 20px !important;
+    border-radius: 10px !important;
+}
+.spanfont span{
+    font-size: 16px ;
+}
+@media (max-width:768px) {
+    .profileimage1{
+        height: 300px;
+    }
+    .spanfont span{
+        font-size: 12px ;
+    }
+    
+}
+@media (max-width:426px) {
+    .profileimage1{
+        height: 200px;
+    }
+    .imgall{
+        display: none;
+    }
+    .box{
+        
+        height: 150px;
+        width: 150px;
+        
+    }
+    .box::before {
+       
+        inset: 0px 50px;
+       
+    }
+    .spanfont span{
+        font-size: 8px ;
+    }
+    
+}

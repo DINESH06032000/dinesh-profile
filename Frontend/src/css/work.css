@@ -1,0 +1,99 @@
+.company_year {
+    float: right;
+}
+
+.company_loc {
+    float: right;
+}
+
+.accordion-button:hover {
+    background-color: var(--a) !important;
+    color: var(--c) !important;
+
+}
+
+.accordion-button {
+    background-color: var(--e) !important;
+    color: var(--a) !important;
+    display: inline !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--c) !important;
+    background-color: var(--a) !important;
+    box-shadow: none !important;
+}
+
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: none !important;
+    --bs-accordion-border-color: var(--c) !important;
+    margin-top: 5px;
+    --bs-accordion-btn-icon: none !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.accordion-item {
+    border: none !important;
+   
+}
+
+.accordion-body {
+    background-color: var(--e);
+    border: 0.5px solid var(--a);
+    color: var(--d);
+    margin: 0px !important;
+    padding: 0px !important;
+   border-bottom-left-radius: 10px ;
+   border-bottom-right-radius:10px ;
+    
+}
+
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none !important;
+    transform: var(--bs-accordion-btn-icon-transform);
+   
+}
+
+.button_float {
+    float: right !important;
+}
+
+h5 {
+    margin: 0px !important;
+}
+p {
+    margin: 0px !important;
+}
+
+.fonticon {
+    font-size: 25px;
+    transform: rotate(130deg);
+}
+
+.rowdata {
+    margin: 10px !important;
+    padding: 0px 20px 0px !important;
+}
+
+.rowdata1 {
+    margin-bottom: 10px;
+    background-color: var(--c);
+    padding: 10px;
+    border: 0.5px solid blue;
+    border-radius: 10px;
+}
+
+.accordion-item {
+    color: var(--bs-accordion-color);
+    background-color: var(--c) !important;
+}
+.imgimg{
+    width: 100%;
+    border-radius: 50%;
+}
+.spanfont{
+    font-size: 10px !important;
+    color: var(--f) ;
+}

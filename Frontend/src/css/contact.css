@@ -1,0 +1,151 @@
+.formtext {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: var(--c);
+    color: gray;
+    border: none;
+}
+.iconsform {
+    color: var(--a);
+    font-size: 20px;
+
+}
+
+.contactform {
+    padding: 50px !important;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: var(--e);
+}
+
+@media(max-width:425px) {
+    
+    .iconsform {
+        font-size: 12px !important;
+    
+    }
+}
+@media(max-width:375px) {
+    .contactform {
+        padding: 30px !important;
+    }
+    .iconsform {
+        font-size: 8px !important;
+    
+    }
+}
+
+
+.contact {
+    margin-top: 50px;
+}
+
+input {
+    width: 100%;
+    border: none !important;
+    background-color: none !important;
+    padding: 5px 10px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.formselect {
+    width: 100%;
+    background-color: var(--c);
+    border: none !important;
+    color: gray;
+    padding: 5px 10px;
+}
+
+.formtext {
+    padding: 5px 10px;
+}
+
+.contacth4 {
+    color: var(--a);
+}
+
+.contactp {
+    margin-bottom: 10px !important;
+
+}
+
+input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]),
+textarea {
+    background-color: var(--c) !important;
+    color: var(--a) !important;
+
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid var(--a) !important;
+    border-radius: 5px;
+}
+
+.formsubmit:hover {
+    background-color: var(--a) !important;
+    color: var(--c) !important;
+}
+
+option {
+    width: 100%;
+}
+
+.formicons {
+    background-color: var(--e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px var(--e);
+
+}
+
+.contenct {
+    display: flex;
+    align-items: center;
+
+}
+
+.blure {
+    color: var(--f);
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    width: 50%; 
+    max-width: 300px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .success {
+    color: green;
+    background-color: #e6ffe6;
+    border: 2px solid green;
+  }
+  .error {
+    color: red;
+    background-color: #ffe6e6;
+    border: 2px solid red;
+  }
+  .close-button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    transition: color 0.2s ease;
+  }
