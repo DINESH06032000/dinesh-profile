@@ -10,15 +10,15 @@ app.use(bodyParser.json())
 
 
 const db = mysql.createConnection({
-  // host: process.env.DB_HOST,
-  // user: process.env.DB_USERNAME, 
-  // password: process.env.DB_PASSWORD,
-  // database: process.env.DB_DBNAME
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME, 
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DBNAME
 
-  host: 'sql.freedb.tech',
-  user: 'freedb_profile', 
-  password: '9f#STQruczkcz#!',
-  database: 'freedb_Dinesh-portfolio'
+  // host: 'sql.freedb.tech',
+  // user: 'freedb_profile', 
+  // password: '9f#STQruczkcz#!',
+  // database: 'freedb_Dinesh-portfolio'
 });
 
 db.connect(err => {
