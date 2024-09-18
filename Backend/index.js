@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', 
-  password: '',
-  database: 'react_portfolio'
+  host: 'sql.freedb.tech',
+  user: 'freedb_profile', 
+  password: '9f#STQruczkcz#!',
+  database: 'freedb_Dinesh-portfolio'
 });
 
 db.connect(err => {
