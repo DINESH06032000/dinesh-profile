@@ -39,22 +39,40 @@ db.getConnection((err) => {
 //   if (!firstName || !lastName || !email || !phone || !message) {
 //     return res.status(400).send('All fields are required.');
 //   }
+const firstName="dinesh"
+const lastName="p"
+const email="dinesh@gmail.com"
+const phone="1234567890"
+const message="Hello, how are you?"
+  const query = `INSERT INTO data (firstName, lastName, email, phone, message)
+  VALUES (?, ?, ?, ?, ?)`
+  db.query(query, [firstName, lastName, email, phone, message], (err,
+    results) => {
+      if (err) {
+        console.error('Error inserting contact:', err.stack);
+        return console.log("failed");
+      }
+      console.log("success");
+      
+    });
 
 
-//   const query = 'INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)';
+
+
+  // const query = 'INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)';
   
-//   db.query(query, [firstName, lastName, email, phone, message], (err, result) => {
-//     if (err) {
-//       console.error('Error inserting data:', err);
-//       return res.status(500).send('Error registering user.');
-//     }
+  // db.query(query, [firstName, lastName, email, phone, message], (err, result) => {
+  //   if (err) {
+  //     console.error('Error inserting data:', err);
+  //     return res.status(500).send('Error registering user.');
+  //   }
 
-//     res.status(200).send('User registered successfully!');
-//   });
+  //   res.status(200).send('User registered successfully!');
+  // });
 // });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
