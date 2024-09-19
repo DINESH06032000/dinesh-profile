@@ -2,7 +2,6 @@
 require('dotenv').config();
 
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
 
@@ -10,15 +9,14 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json()); // For parsing JSON request bodies
+app.use(express.json()); // Built-in middleware for parsing JSON request bodies
 
 // Database connection pool for better performance
 const db = mysql.createPool({
   host: process.env.DB_HOST,
-  // host: '130.162.54.212', 
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DBNAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
   connectionLimit: 10 // To handle multiple connections efficiently
 });
 
@@ -31,48 +29,27 @@ db.getConnection((err) => {
   console.log('Connected to the MySQL database.');
 });
 
+// Endpoint to insert data
+app.post('/cont', (req, res) => {
+  const { firstName, lastName, email, phone, message } = req.body;
 
-// app.post('/cont', (req, res) => {
-//   const { firstName, lastName, email, phone, message } = req.body;
+  if (!firstName || !lastName || !email || !phone || !message) {
+    return res.status(400).send('All fields are required.');
+  }
 
-
-//   if (!firstName || !lastName || !email || !phone || !message) {
-//     return res.status(400).send('All fields are required.');
-//   }
-const firstName="dinesh"
-const lastName="p"
-const email="dinesh@gmail.com"
-const phone="1234567890"
-const message="Hello, how are you?"
-  const query = `INSERT INTO data (firstName, lastName, email, phone, message)
-  VALUES (?, ?, ?, ?, ?)`
-  db.query(query, [firstName, lastName, email, phone, message], (err,
-    results) => {
-      if (err) {
-        console.error('Error inserting contact:', err.stack);
-        return console.log("failed");
-      }
-      console.log("success");
-      
-    });
-
-
-
-
-  // const query = 'INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)';
+  const query = `INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)`;
   
-  // db.query(query, [firstName, lastName, email, phone, message], (err, result) => {
-  //   if (err) {
-  //     console.error('Error inserting data:', err);
-  //     return res.status(500).send('Error registering user.');
-  //   }
-
-  //   res.status(200).send('User registered successfully!');
-  // });
-// });
+  db.query(query, [firstName, lastName, email, phone, message], (err, results) => {
+    if (err) {
+      console.error('Error inserting data:', err.stack);
+      return res.status(500).send('Error inserting data.');
+    }
+    res.status(200).send('Data inserted successfully!');
+  });
+});
 
 // Start the server
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
