@@ -11,7 +11,6 @@ import axios from 'axios';
 export default function Contact() {
 
  
-
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
   const [formData, setFormData] = useState({
@@ -34,7 +33,7 @@ export default function Contact() {
     e.preventDefault();
 
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/cont`, formData)
+      .post(`${process.env.REACT_APP_BACKEND_URL}`, formData)
       .then((response) => {
 
         setMessage('Message send Successfully! ');
