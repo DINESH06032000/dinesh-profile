@@ -70,7 +70,7 @@ export default function Contact() {
           <div className="col-lg-7 col-12 contactform">
             <h4 className='contacth4'>Let's make this happen!...</h4>
             <p className='contactp'>Confidently looking forward to a partnership that exceeds expectations.</p>
-            <form onSubmit={handleSubmit} className='forms' netlify>
+            <form onSubmit={handleSubmit} className='forms' netlify='true'>
               <div className='row formname'>
                 <div className="col-lg-6 mb-lg-4 mb-md-3 mb-2">
                   <input className=''
