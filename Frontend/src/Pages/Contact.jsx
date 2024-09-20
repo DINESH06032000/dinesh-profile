@@ -7,7 +7,11 @@ import { IoClose } from "react-icons/io5";
 import Designed from '../components/Designed';
 import axios from 'axios';
 
+
 export default function Contact() {
+
+ 
+
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
   const [formData, setFormData] = useState({
@@ -50,13 +54,13 @@ export default function Contact() {
         setMessage('Error while sending Message');
         setMessageType('error');
       });
-
   }
   const closeMessage = () => {
     setMessage('');
     setMessageType('');
   }
 
+  
 
 
   return (
