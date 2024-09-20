@@ -7,17 +7,14 @@ const mysql = require('mysql2');
 
 const app = express();
 
-// Middleware
+
 app.use(cors());
 app.use(express.json()); 
 
 const urldb=`mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`
 const db = mysql.createConnection(urldb);
 
-// Test the database connection
 
-
-// Endpoint to insert data
 app.post('/cont', (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
@@ -36,8 +33,8 @@ app.post('/cont', (req, res) => {
   });
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
