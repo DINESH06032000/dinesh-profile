@@ -9,16 +9,10 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // Built-in middleware for parsing JSON request bodies
+app.use(express.json()); 
 
-// Database connection pool for better performance
-const db = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  connectionLimit: 10 // To handle multiple connections efficiently
-});
+const urldb=`mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`
+const db = mysql.createConnection(urldb);
 
 // Test the database connection
 db.getConnection((err) => {

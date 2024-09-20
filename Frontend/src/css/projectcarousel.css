@@ -138,4 +138,9 @@ button.active {
     #carouselExampleInterval {
         height: 350px;
     }
+    
+    .fonticon1 {
+            font-size: 15px !important;
+        }
+    
 }
