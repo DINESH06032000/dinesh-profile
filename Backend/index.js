@@ -15,13 +15,7 @@ const urldb=`mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${pro
 const db = mysql.createConnection(urldb);
 
 // Test the database connection
-db.getConnection((err) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    return;
-  }
-  console.log('Connected to the MySQL database.');
-});
+
 
 // Endpoint to insert data
 app.post('/cont', (req, res) => {
