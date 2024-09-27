@@ -7,14 +7,23 @@ const mysql = require('mysql2');
 
 const app = express();
 
-
 app.use(cors());
-app.use(express.json()); 
+app.use(express.json());
 
-const urldb=`mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`
+// Set up MySQL connection
+const urldb = process.env.MYSQL_URL;  // Read the connection URL from the environment
 const db = mysql.createConnection(urldb);
 
+// Handle MySQL connection errors
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err.stack);
+    process.exit(1);  // Exit if there's a connection error
+  }
+  console.log('Connected to MySQL');
+});
 
+// Insert data route
 app.post('/cont', (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
@@ -23,7 +32,7 @@ app.post('/cont', (req, res) => {
   }
 
   const query = `INSERT INTO data (firstName, lastName, email, phone, message) VALUES (?, ?, ?, ?, ?)`;
-  
+
   db.query(query, [firstName, lastName, email, phone, message], (err, results) => {
     if (err) {
       console.error('Error inserting data:', err.stack);
@@ -33,8 +42,19 @@ app.post('/cont', (req, res) => {
   });
 });
 
-
+// Start the server and listen on port 3306
 const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+});
+
+// Handle process termination
+process.on('SIGINT', () => {
+  db.end((err) => {
+    if (err) {
+      console.error('Error closing MySQL connection:', err.stack);
+    }
+    console.log('MySQL connection closed.');
+    process.exit(0);
+  });
 });
