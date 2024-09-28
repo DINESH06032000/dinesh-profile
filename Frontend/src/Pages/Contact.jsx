@@ -32,7 +32,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://dinesh-profile.onrender.com/cont", formData)
+        axios.post("https://dinesh-profile.onrender.com/data", formData)
       .then((response) => {
 
         setMessage('Message send Successfully! ');
