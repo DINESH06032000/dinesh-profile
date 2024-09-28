@@ -6,11 +6,8 @@ import { FaLocationDot } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import Designed from '../components/Designed';
 
-
-
 export default function Contact() {
 
- 
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
   const [formData, setFormData] = useState({
@@ -32,18 +29,16 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-        fetch("https://dinesh-profile.onrender.com/data", {
+    fetch("https://dinesh-profile.onrender.com/data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => {
-
-        setMessage('Message send Successfully! ');
+    .then((response) => {
+        setMessage('Message sent successfully!');
         setMessageType('success');
-
 
         setFormData({
           firstName: '',
@@ -55,24 +50,24 @@ export default function Contact() {
       })
       .catch((error) => {
         console.error('There was an error!', error);
-        setMessage('Error while sending Message');
+        setMessage('Error while sending the message');
         setMessageType('error');
       });
-  }
+  };
+
   const closeMessage = () => {
-    setMessage('');
-    setMessageType('');
+    setMessage('');  // Hide the message when closed
+    setMessageType('');  // Reset the message type
   }
-
-  
-
 
   return (
     <>
-      <div className={`message ${messageType}`}>
+      {/* Message Box: Apply "show" class only if there is a message */}
+      <div className={`message ${messageType} ${message ? 'show' : ''}`}>
         <span>{message}</span>
         <button className="close-button" onClick={closeMessage}><IoClose/></button>
       </div>
+
       <div className="container contact">
         <div className="row">
           <div className="col-lg-7 col-12 contactform">
@@ -81,7 +76,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className='forms' netlify='true'>
               <div className='row formname'>
                 <div className="col-lg-6 mb-lg-4 mb-md-3 mb-2">
-                  <input className=''
+                  <input
                     type="text"
                     placeholder='Firstname'
                     name='firstName'
@@ -89,7 +84,6 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                   />
-                  
                 </div>
                 <div className="col-lg-6 mb-lg-4 mb-md-3 mb-2">
                   <input
@@ -125,7 +119,6 @@ export default function Contact() {
                   />
                 </div>
               </div>
-
               <div>
                 <textarea
                   name="message"
@@ -141,7 +134,9 @@ export default function Contact() {
               </div>
             </form>
           </div>
+
           <div className="col-lg-1 col-12"></div>
+
           <div className="col-lg-4 col-12 contenct mt-md-4  p-5">
             <div>
               <div className="row">
