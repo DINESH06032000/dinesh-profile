@@ -5,7 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import Designed from '../components/Designed';
-import axios from 'axios';
+
 
 
 export default function Contact() {
@@ -32,7 +32,13 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-        axios.post("https://dinesh-profile.onrender.com/data", formData)
+        fetch("https://dinesh-profile.onrender.com/data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => {
 
         setMessage('Message send Successfully! ');
